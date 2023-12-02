@@ -1,3 +1,5 @@
+import './style.css';
+
 const securityKey = "37431f2d56f34c9eb9c01543232711"
 
 async function getWeather(json, city) {

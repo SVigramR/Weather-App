@@ -8,3 +8,9 @@ weatherapi data will be used to show realtime weather.
 - Another function that receives the weather object and create a UI.
 
 The UI should be quite simple for now and the codes written should be reuseable for other API available in weatherapi service.
+
+Color Palette:
+161A30
+31304D
+B6BBC4
+B6BBC4B6BBC4
