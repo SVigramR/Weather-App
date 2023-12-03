@@ -8,9 +8,11 @@ body {
     color: #F0ECE5;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-header {
+header, footer {
     background-color: #161A30;
     height: 5rem;
     width: auto;
@@ -19,11 +21,12 @@ header {
     align-items: center;
 }
 
-main {
+.main-section {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100vw;
+    flex-grow: 1;
 }
 
 .searchDiv {
@@ -64,4 +67,10 @@ button {
     border-bottom-right-radius: 5px;
     margin: 0;
     background-color: #B6BBC4;
+}
+
+footer {
+    height: 2rem;
+    width: 100vw;
+    /* margin-top: auto; */
 }
