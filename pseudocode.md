@@ -13,4 +13,54 @@ Color Palette:
 161A30
 31304D
 B6BBC4
-B6BBC4B6BBC4
+F0ECE5
+
+The weather UI card(divided into three parts):
+- Name of the city with country, lat and lon, localtime
+- the card must have the temperature in celsius with condition icon and text.
+- humidity, cloudiness, percipitation, wind speed, UV index, visibility
+
+
+
+
+{
+    "location": {
+        "name": "Chennai",
+        "region": "Tamil Nadu",
+        "country": "India",
+        "lat": 13.08,
+        "lon": 80.28,
+        "tz_id": "Asia/Kolkata",
+        "localtime_epoch": 1701609359,
+        "localtime": "2023-12-03 18:45"
+    },
+    "current": {
+        "last_updated_epoch": 1701608400,
+        "last_updated": "2023-12-03 18:30",
+        "temp_c": 25,
+        "temp_f": 77,
+        "is_day": 0,
+        "condition": {
+            "text": "Moderate rain",
+            "icon": "//cdn.weatherapi.com/weather/64x64/night/302.png",
+            "code": 1189
+        },
+        "wind_mph": 6.9,
+        "wind_kph": 11.2,
+        "wind_degree": 330,
+        "wind_dir": "NNW",
+        "pressure_mb": 1005,
+        "pressure_in": 29.68,
+        "precip_mm": 12.26,
+        "precip_in": 0.48,
+        "humidity": 94,
+        "cloud": 100,
+        "feelslike_c": 28.1,
+        "feelslike_f": 82.6,
+        "vis_km": 1,
+        "vis_miles": 0,
+        "uv": 1,
+        "gust_mph": 44,
+        "gust_kph": 70.8
+    }
+}

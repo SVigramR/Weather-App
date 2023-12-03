@@ -42,7 +42,7 @@ input[type='text'] {
     padding: 5px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    width: 30rem;
+    width: 300px;
     margin: 0;
     background-color: #F0ECE5;
 }
@@ -67,6 +67,27 @@ button {
     border-bottom-right-radius: 5px;
     margin: 0;
     background-color: #B6BBC4;
+}
+
+/* weather data card */
+.weather-card {
+    height: 500px;
+    width: 300px;
+    background-color: #161A30;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 1.5rem;
+}
+
+.upper-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* text-align: center; */
+    width: auto;
+    height: auto;
 }
 
 footer {
