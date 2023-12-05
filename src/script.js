@@ -10,16 +10,21 @@ async function getWeather(json, city) {
 }
 
 async function modifyWeather() {
+    const content = document.getElementById('content')
     const cityName = document.getElementById('searchInput').value
     const current = await getWeather('current', cityName)
     console.log(current)
-    if (document.getElementById('weatherCard')) {
-        const content = document.getElementById('content')
-        content.removeChild(document.getElementById('weatherCard'))
+    const weatherCard = document.getElementById('weatherCard')
+    const errorCard = document.getElementById('errorCard')
+    if (weatherCard) {
+        content.removeChild(weatherCard)
+    } else if (errorCard) {
+        content.removeChild(errorCard)
     }
-    if (current.error) console.log(current.error.message);
     if (!current.error) {
         createWeatherModal(current.location.name, current.location.country, current.location.lat, current.location.lon, current.location.localtime, current.current.condition.icon, current.current.temp_c, current.current.condition.text, current.current.humidity, current.current.cloud, current.current.precip_in, current.current.wind_kph, current.current.uv, current.current.vis_km)
+    } else {
+        errorModal(current.error.code, current.error.message)
     }
 }
 
@@ -87,6 +92,25 @@ async function createWeatherModal(cityName, countryName, latitude, longitude, da
     
     card.append(upperCard, middleCard, lowerCard)
     content.append(card)
+}
+
+async function errorModal(code, message) {
+    const content = document.getElementById('content')
+    const errorDiv = document.createElement('p')
+    errorDiv.classList.add('error-card')
+    errorDiv.setAttribute('id', 'errorCard')
+    switch (code) {
+        case 1003:
+            errorDiv.textContent = "No city name was entered"
+            break;
+        case 1006:
+            errorDiv.textContent = "City name not found"
+            break;
+        default:
+            errorDiv.textContent = message
+            break;
+    }
+    content.append(errorDiv)
 }
 
 const buttonSearch = document.getElementById('searchBtn')
