@@ -15,6 +15,10 @@ async function modifyWeather() {
     console.log(current)
     if (current.error) console.log(current.error.message);
     if (!current.error) {
+        if (document.getElementById('weatherCard')) {
+            const content = document.getElementById('content')
+            content.removeChild(document.getElementById('weatherCard'))
+        }
         createWeatherModal(current.location.name, current.location.country, current.location.lat, current.location.lon, current.location.localtime, current.current.condition.icon, current.current.temp_c, current.current.condition.text, current.current.humidity, current.current.cloud, current.current.precip_in, current.current.wind_kph, current.current.uv, current.current.vis_km)
     }
 }
