@@ -13,12 +13,12 @@ async function modifyWeather() {
     const cityName = document.getElementById('searchInput').value
     const current = await getWeather('current', cityName)
     console.log(current)
+    if (document.getElementById('weatherCard')) {
+        const content = document.getElementById('content')
+        content.removeChild(document.getElementById('weatherCard'))
+    }
     if (current.error) console.log(current.error.message);
     if (!current.error) {
-        if (document.getElementById('weatherCard')) {
-            const content = document.getElementById('content')
-            content.removeChild(document.getElementById('weatherCard'))
-        }
         createWeatherModal(current.location.name, current.location.country, current.location.lat, current.location.lon, current.location.localtime, current.current.condition.icon, current.current.temp_c, current.current.condition.text, current.current.humidity, current.current.cloud, current.current.precip_in, current.current.wind_kph, current.current.uv, current.current.vis_km)
     }
 }
@@ -53,7 +53,7 @@ async function createWeatherModal(cityName, countryName, latitude, longitude, da
     const iconAndTempDiv = document.createElement('div')
     iconAndTempDiv.classList.add('icon-temp-holder')
     const celsius = document.createElement('p')
-    celsius.textContent = `${temperature}\xB0 C`
+    celsius.textContent = `${temperature}\xB0C`
     iconAndTempDiv.append(icon, celsius)
     const conditionText = document.createElement('p')
     conditionText.textContent = condition

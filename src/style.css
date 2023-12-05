@@ -71,13 +71,14 @@ button {
 
 /* weather data card */
 .weather-card {
-    height: 500px;
+    height: max-content;
     width: 300px;
     background-color: #161A30;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2rem;
+    gap: 2rem;
     border-radius: 1.5rem;
 }
 
@@ -85,9 +86,42 @@ button {
     display: flex;
     align-items: center;
     flex-direction: column;
-    /* text-align: center; */
+    text-align: center;
     width: auto;
     height: auto;
+}
+
+.middle-card {
+    text-align: center;
+}
+
+.icon-temp-holder {
+    display: flex;
+    font-size: 4rem;
+}
+
+.lower-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.lower-box {
+    /* padding: 5px; */
+    /* margin: 5px; */
+    text-align: center;
+    min-width: 5rem;
+}
+
+.lower-box h5 {
+    font-size: 1rem;
+}
+
+.lower-box p {
+    font-size: 2rem;
+    font-weight: 900;
 }
 
 footer {
