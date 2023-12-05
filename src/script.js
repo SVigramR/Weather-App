@@ -90,4 +90,11 @@ async function createWeatherModal(cityName, countryName, latitude, longitude, da
 }
 
 const buttonSearch = document.getElementById('searchBtn')
+const searchInput = document.getElementById('searchInput')
 buttonSearch.addEventListener('click', modifyWeather)
+searchInput.addEventListener('keypress', (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        buttonSearch.click()
+    }
+})
